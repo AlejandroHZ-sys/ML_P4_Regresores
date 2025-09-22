@@ -6,9 +6,10 @@ from sklearn import datasets
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from sklearn.preprocessing import LabelEncoder
+
 
 # Cargar el dataset Iris
+
 iris = datasets.load_iris()
 print("Dataset Iris cargado exitosamente")
 print(f"Forma de los datos: {iris.data.shape}")
@@ -17,6 +18,7 @@ print(f"Clases: {iris.target_names}")
 print()
 
 # Crear DataFrame para mejor manipulación
+
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 df['species'] = iris.target
 
@@ -25,6 +27,7 @@ print(df.head())
 print()
 
 # Preparar los datos para regresión
+
 # Usaremos las primeras 3 características como X y la 4ta como y (petal width)
 X = iris.data[:, :3]  # sepal length, sepal width, petal length
 y = iris.data[:, 3]   # petal width (variable a predecir)
